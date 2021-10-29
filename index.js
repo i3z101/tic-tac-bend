@@ -20,29 +20,29 @@ app.use(cors({
 }));
 
 app.get("/", (req, res)=> {
-    res.json("hii");
+    res.send("hii");
 })
 
 
 
 app.listen(PORT);
 
-io.on("connection", (socket)=> {
+// io.on("connection", (socket)=> {
 
-    socket.on("joinRoom", (args)=> {
-        socket.join(args.gameId);
-        socket.to(args.gameId).emit("startTimer");
-    })
+//     socket.on("joinRoom", (args)=> {
+//         socket.join(args.gameId);
+//         socket.to(args.gameId).emit("startTimer");
+//     })
 
-    socket.on("play", (args)=> {
-        socket.to(args.gameId).emit("done", args);
-    })
+//     socket.on("play", (args)=> {
+//         socket.to(args.gameId).emit("done", args);
+//     })
 
-    socket.on("finish", (args)=> {
-        socket.to(args.gameId).emit("finishGame", args);
-    })
+//     socket.on("finish", (args)=> {
+//         socket.to(args.gameId).emit("finishGame", args);
+//     })
 
-    socket.on("playAgain", (args)=>{
-        socket.nsp.to(args.gameId).emit("playAgain");
-    })
-})
+//     socket.on("playAgain", (args)=>{
+//         socket.nsp.to(args.gameId).emit("playAgain");
+//     })
+// })
