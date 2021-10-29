@@ -3,7 +3,6 @@ const app = express();
 const cors = require('cors');
 const PORT = process.env.PORT || 5000;
 const IO_PORT = process.env.PORT || 8000
-const http = require('http').Server(app);
 const {Server} = require('socket.io');
 
 // const serevr = http.createServer(app);
@@ -20,9 +19,9 @@ app.use(cors({
     methods: ["GET", "POST"]
 }));
 
-// app.get("/", (req, res)=> {
-//     res.json("hii");
-// })
+app.get("/", (req, res)=> {
+    res.json("hii");
+})
 
 
 
