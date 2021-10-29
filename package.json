@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "set NODE_ENV=development&& node index.js",
+    "start-prod": "set NODE_ENV=production&& node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,5 +15,8 @@
     "express": "^4.17.1",
     "nodemon": "^2.0.14",
     "socket.io": "^4.3.1"
+  },
+  "engines": {
+    "node": "14.17.6"
   }
 }
