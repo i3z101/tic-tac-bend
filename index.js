@@ -21,9 +21,9 @@ app.use(cors({
     methods: ["GET", "POST"]
 }));
 
-// app.get("/", (req, res)=> {
-//     res.json("hii");
-// })
+app.get("/", (req, res)=> {
+    res.json("hii");
+})
 
 
 
